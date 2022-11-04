@@ -1,0 +1,10 @@
+@media(width<1440px) {
+    .table-style {
+        font-size: 10px;
+    }
+
+    #second-stage .sport-type {
+        color: #A1A1A1;
+        /* width: calc(100% / 6);  */
+    }
+}

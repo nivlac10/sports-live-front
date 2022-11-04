@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="27" viewBox="0 0 27 27">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.707" x2="0.707" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff1056"/>
+      <stop offset="1" stop-color="#f86d36"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.268" y1="0.5" x2="0.908" y2="0.934" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fb8541"/>
+      <stop offset="1" stop-color="#fb3848"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="패스_4" data-name="패스 4" d="M13.5,0A13.5,13.5,0,1,1,0,13.5,13.5,13.5,0,0,1,13.5,0Z" transform="translate(0 0)" fill="url(#linear-gradient)" clip-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g id="live_icon" transform="translate(1970.536 -1289.464)">
+    <path id="패스_1" data-name="패스 1" d="M13.5,0A13.5,13.5,0,1,1,0,13.5,13.5,13.5,0,0,1,13.5,0Z" transform="translate(-1970.536 1289.464)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+    <path id="패스_5" data-name="패스 5" d="M11.017,0A11.017,11.017,0,1,1,0,11.017,11.017,11.017,0,0,1,11.017,0Z" transform="translate(-1968.053 1291.947)" fill="#fff" fill-rule="evenodd" style="mix-blend-mode: overlay;isolation: isolate"/>
+    <path id="패스_6" data-name="패스 6" d="M10.169,0A10.169,10.169,0,1,1,0,10.169,10.169,10.169,0,0,1,10.169,0Z" transform="translate(-1967.204 1292.796)" fill="#fff" fill-rule="evenodd"/>
+    <path id="다각형_2" data-name="다각형 2" d="M5.222,1.646a1,1,0,0,1,1.763,0l4.434,8.28a1,1,0,0,1-.882,1.472H1.67A1,1,0,0,1,.788,9.926Z" transform="translate(-1949.704 1296.86) rotate(90)" fill="url(#linear-gradient-3)"/>
+    <g id="마스크_그룹_1" data-name="마스크 그룹 1" transform="translate(-1970.536 1289.464)" opacity="0.49" clip-path="url(#clip-path)" style="mix-blend-mode: soft-light;isolation: isolate">
+      <path id="패스_3" data-name="패스 3" d="M11.9,0A11.9,11.9,0,1,1,0,11.9,11.9,11.9,0,0,1,11.9,0Z" transform="translate(8.932 -7.845)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

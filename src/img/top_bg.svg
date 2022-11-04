@@ -1,0 +1,9 @@
+<svg id="top_bg" xmlns="http://www.w3.org/2000/svg" width="1920" height="80" viewBox="0 0 1920 80">
+  <rect id="top_bg-2" data-name="top_bg" width="1920" height="80" fill="#f3f3f3"/>
+  <g id="그룹_6" data-name="그룹 6">
+    <path id="패스_14" data-name="패스 14" d="M34.4,80l60-60h2.4l20-20h76V80Zm-12,0L33.6,68.8h3.2L74.4,31.2H76L107.2,0h1.6l-80,80ZM16,80,40,56h.8L82.4,14.4H84L18.4,80ZM0,80,28.8,51.2h.8L.8,80Z" transform="translate(1727.2)" fill="#fff" fill-rule="evenodd"/>
+    <path id="패스_15" data-name="패스 15" d="M126.4,80H116l29.6-29.6V60.8ZM87.2,80,104,63.2h2.4L145.6,24v6.4L95.2,80Zm-12,0,63.2-63.2H140l5.6-5.6v3.2L80,80ZM62.4,80,144,0h1.6V1.6L67.2,80ZM0,80,80,0h6.4L6.4,80ZM68,31.2,19.2,80H17.6L66.4,31.2Z" transform="translate(1774.4)" fill="#f3f3f3" fill-rule="evenodd"/>
+    <path id="패스_17" data-name="패스 17" d="M128,0,79.516,60H77.577L61.415,80H0V0Zm9.7,0-9.051,11.2h-2.586L95.678,48.8H94.385L69.173,80H67.88L132.527,0Zm5.172,0L123.476,24h-.646L89.213,65.6H87.92L140.931,0ZM155.8,0,132.527,28.8h-.646L155.154,0Z" fill="#fff" fill-rule="evenodd"/>
+    <path id="패스_16" data-name="패스 16" d="M14.321,0h7.757L0,29.6V19.2ZM43.559,0,31.029,16.8h-1.79L0,56V49.6L37.592,0ZM52.51,0,5.37,63.2H4.177L0,68.8V65.6L48.93,0Zm9.547,0L1.193,80H0V78.4L58.477,0ZM108.6,0,48.93,80H44.156l59.67-80ZM57.88,48.8,94.279,0h1.193l-36.4,48.8Z" fill="#f3f3f3" fill-rule="evenodd"/>
+  </g>
+</svg>

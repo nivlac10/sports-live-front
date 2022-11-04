@@ -1,0 +1,140 @@
+@media(max-width: 960px) {
+    #header {
+        top: 0;
+        background: url("/src/img/mobile_top_bg.png") no-repeat;
+        background-size: cover;
+        height: 48px;
+        width: 100%;
+
+    }
+
+    #logo {
+        background: url("/src/img/web_logo_dummy.png") no-repeat center;
+        width: 100%;
+        height: 22px;
+        margin: auto;
+        margin-top: 13px;
+
+    }
+
+    #second-stage {
+        display: none;
+    }
+
+    #second-stage-mobile {
+        background-color: #E6E6E6;
+        height: 48px;
+    }
+
+    #second-stage-mobile .sport-type a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    #second-stage-mobile .sport-type {
+        float: left;
+        height: 48px;
+        width: calc(100% / 5);
+        min-width: 9px;
+        margin-right: 0px;
+        line-height: 15px;
+        color: #A1A1A1;
+        font-size: 13px;
+        cursor: pointer;
+        opacity: 0.5;
+        border: 0;
+        border-bottom: solid 2px transparent;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    #second-stage-mobile .sport-type img {
+        width: 20px;
+        height: 20px;
+        margin: auto;
+        margin-top: 5px;
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav ol.breadcrumb {
+        display: none;
+    }
+
+    nav ol.breadcrumb li a {
+        display: none;
+    }
+
+    nav ol.breadcrumb li img {
+        display: none;
+    }
+
+    nav ol.breadcrumb li.active {
+        display: none;
+    }
+
+    #footer {
+        display: none;
+    }
+
+    #footer-mobile {
+        display: block;
+        max-width: 960px;
+    }
+
+    #footer-pic {
+        background: url(./src/img/web_logo_dummy.png);
+        height: 28px;
+        width: 175px;
+        margin: auto;
+        margin-top: 36px;
+
+    }
+
+    .LiveStrem {
+        width: 79px;
+        font-size: 12px;
+        margin-left: 8px;
+    }
+
+    .my-iframe {
+        width: 100vw;
+        max-width: 1520px;
+        height: calc(100vw / 16 * 9);
+        margin-top: 0;
+    }
+
+    .mobile-stream-frame {
+        display: block;
+    }
+
+    .webPage {
+        display: table-header-group;
+    }
+
+    .mobilePage {
+        display: none;
+    }
+
+    .bread-container {
+        display: none;
+    }
+
+    .pc-stream-frame {
+        display: none;
+    }
+    
+    #stream-button-list{
+        display: none;
+    }
+    #stream-button-list-mobile{
+        display: block;
+        margin-top: 25px;
+    }
+    #info-mobile{
+        display: block;
+    }
+}

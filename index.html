@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="icon" href="./img/main-logo.png" type="image/png"> -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/4-3.css" />
+    <link rel="stylesheet" href="./src/css/1440.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>livestream</title>
+    <style>
+
+
+    </style>
+</head>
+<!-- <button id="gametype_1" class="gameOrderBtn2 ff-bold fs-16px mfs-12px"
+    onclick="ordergameicon(this)">{{Slot}}</button> -->
+
+<body>
+    <div>
+        <div id="header" class="position-sticky" style="top: 0;z-index: 7;">
+            <div class="container-fluid p-0">
+                <div class="row m-0" style="width:100%">
+                    <div class="col p-0">
+                        <div id="logo">
+                        </div>
+                    </div>
+                </div>
+                <div id="second-stage">
+                    <div id="second-stage-left"></div>
+                    <div class="sport-type p-0" id="sport-all-click" onclick="postLiveStream()">
+                        <img src="/src/img/live_icon.svg">ALL LIVE
+                    </div>
+                    <div class="sport-type p-0" id="sport-football-click" onclick="postLiveStream('Football')">
+                        <img src="/src/img/Football.png" />Football
+                    </div>
+                    <div class="sport-type p-0" id="sport-basketball-click" onclick="postLiveStream('Basketball')">
+                        <img src="/src/img/Basketball.png" />Basketball
+                    </div>
+                    <div class="sport-type p-0" id="sport-tennis-click" onclick="postLiveStream('Tennis')">
+                        <img src="/src/img/Tennis.png" />Tennis
+                    </div>
+                    <div class="sport-type p-0" id="sport-baseball-click" onclick="postLiveStream('Baseball')">
+                        <img src="/src/img/Baseball.png" />Baseball
+                    </div>
+                </div>
+            </div>
+            <div class="loading-pic"></div>
+            <div class="loading-info">loading...</div>
+        </div>
+        <div class="fade-background" style="min-height: calc( 100vh - 183px); ">
+            <div id="football-distance">
+                <!--/*足球 FOOTBALL*/-->
+                <div id="football-block" class="sport-block">
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Football</span>
+                        <span class="today-show">Today</span>
+
+                    </div>
+
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:0px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:0px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:0px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:0px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Football-today-date" class="table-style today-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-footballtoday" class="text-center">no data</div>
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Football</span>
+                        <span class="showTomorrowDay"></span>
+                    </div>
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:0px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:0px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:0px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:0px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Football-tomorrow-date" class="table-style tomorrow-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-footballtomorrow" class="text-center">no data</div>
+                </div>
+                <!--/*籃球 basketball*/-->
+                <div id="basketball-block" class="sport-block">
+
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Basketball</span>
+                        <span class="today-show">Today</span>
+                    </div>
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:16px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Basketball-today-date" class="table-style today-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-basketballtoday" class="text-center">no data</div>
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Basketball</span>
+                        <span class="showTomorrowDay"></span>
+                    </div>
+
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:16px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Basketball-tomorrow-date" class="table-style tomorrow-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-basketballtomorrow" class="text-center">no data</div>
+                </div>
+                <!--/*棒球 baseball*/-->
+                <div id="baseball-block" class="sport-block">
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Baseball</span>
+                        <span class="today-show">Today</span>
+                    </div>
+
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:16px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Baseball-today-date" class="table-style today-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-baseballtoday" class="text-center">no data</div>
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Baseball</span>
+                        <span class="showTomorrowDay"></span>
+                    </div>
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:16px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Baseball-tomorrow-date" class="table-style tomorrow-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-baseballtomorrow" class="text-center">no data</div>
+                </div>
+                <!--/*網球 tennis*/-->
+                <div id="tennis-block" class="sport-block">
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Tennis</span>
+                        <span class="today-show">Today</span>
+                    </div>
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:16px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Tennis-today-date" class="table-style today-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-tennistoday" class="text-center">no data</div>
+                    <div class="tableName">
+                        <div id="red-frame"></div>
+                        <span class="sport-p">Tennis</span>
+                        <span class="showTomorrowDay"></span>
+                    </div>
+                    <table class="table table-hover tableName">
+                        <thead class="web-table" style="background-color: #EBEBEB;">
+                            <tr>
+                                <th class="text-center" style="width: 160px; height:16px">Time</th>
+                                <th class="text-center" style="width: 248px; height:16px">League Name</th>
+                                <th class="text-center" style="width: 910px; height:16px">Home Team VS Away Team</th>
+                                <th class="text-center" style="width: 124px; height:16px">Live</th>
+                            </tr>
+                        </thead>
+                        <thead class="mobile-table">
+                            <tr>
+                                <th class="text-center p-0" style="width: 160px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 248px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 910px; height:16px"></th>
+                                <th class="text-center p-0" style="width: 124px; height:16px"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Tennis-tomorrow-date" class="table-style tomorrow-date">
+                        </tbody>
+                    </table>
+                    <div id="nodata-tennistomorrow" class="text-center">no data</div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" style="bottom: 0px;z-index: 7;">
+            <div class="container-fluid px-4">
+                <div class="row">
+                    <div class="col">
+                        <div id="footer-pic"></div>
+                    </div>
+                </div>
+                <div class="row" style="margin:auto; margin-top:36px; width:420px; font-size:12px;">
+                    <div class="p-0 text-center col-3 col-lg-4">Terms of Ues</div>
+                    <div class="p-0 text-center col-3 col-lg-4">Privacy Pollcy</div>
+                    <div class="p-0 text-center col-4 col-lg-4">Interest-Based Ads</div>
+                </div>
+                <div class="row">
+                    <div class="col text-center" style="margin-top:20px;font-size:12px; color:#CACACA">
+                        © ESPN Enterprises, Inc. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //let apiUrl = 'https://wc1-api.jsjs155.com/api';
+        let apiUrl = 'https://wc1-api.jsjs155.com/api';
+        let get_livestream_data;
+        let sport_football = {
+            sports_type: "Football"
+        };
+        let sport_basketball = {
+            sports_type: "basketball"
+        };
+        let sport_tennis = {
+            sports_type: "tennis"
+        };
+        let sport_baseball = {
+            sports_type: "baseball"
+        };
+        let sport_volleyball = {
+            sports_type: "volleyball"
+        };
+
+        let today = new Date();
+        let tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        let yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+
+        function formatDate(date, format) {
+            mm = '' + (date.getMonth() + 1);
+            dd = '' + date.getDate();
+            yyyy = date.getFullYear();
+            if (mm.length < 2)
+                mm = '0' + mm;
+            if (dd.length < 2)
+                dd = '0' + dd;
+            return [yyyy, mm, dd].join('-');
+        }
+
+        function formatDateEng(tomorrow) {
+            var m = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Spt", "Oct", "Nov", "Dec");
+
+            mn = tomorrow.getMonth();
+            dd = tomorrow.getDate();
+            return [dd, m[mn]];
+        }
+
+        let today_date = formatDate(today, 'yyyy-mm-dd');
+        let tomorrow_date = formatDateEng(tomorrow);
+        let yesterday_date = formatDate(yesterday, 'yyyy-mm-dd');
+        //取得所有的資料
+        function postLiveStream(sports_type) {
+            // $(".loading-pic").hide();
+            $("tbody.tomorrow-date").empty();
+            $("tbody.today-date").empty();
+            $("div.sport-block").hide();
+            $(".sport-type").removeClass("active");
+            switch (sports_type) { //根據sports_type判斷要顯示哪個球類，目前設定了足球
+                case `Football`:
+                case `Basketball`:
+                case `Baseball`:
+                case `Tennis`:
+                    $(`#${sports_type.toLowerCase()}-block`).show();
+                    console.log(`#sport-${sports_type.toLowerCase()}-click`)
+                    $(`#sport-${sports_type.toLowerCase()}-click`).addClass(`active`)
+                    break;
+                default:
+                    $("div.sport-block").show();
+                    $("#sport-all-click").addClass("active")
+                    break;
+            }
+            $.post(apiUrl + "/get_livestreams", {
+                sports_type
+            }, function (response) {
+                $(".fade-background").css("opacity", 1);
+                $(".loading-pic").hide();
+                $(".loading-info").hide();
+                get_livestream_data = response;
+                $(`#nodata-footballtoday`).show();
+                $(`#nodata-footballtomorrow`).show();
+                $(`#nodata-basketballtoday`).show();
+                $(`#nodata-basketballtomorrow`).show();
+                $(`#nodata-baseballtoday`).show();
+                $(`#nodata-baseballtomorrow`).show();
+                $(`#nodata-tennistoday`).show();
+                $(`#nodata-tennistomorrow`).show();
+                for (var i in response.data) {
+                    switch (response.data[i].sports_type) {
+                        case `Football`:
+                        case `Basketball`:
+                        case `Baseball`:
+                        case `Tennis`: {
+                            //今天和跨日未結束的訊號源
+                            let showSecondPic = "2";
+                            let teamNameWidthLeft = "45px";
+                            let teamNameWidthRight = "60px";
+                            if (response.data[i].home_mark.split(",").length > 1) {
+                                showSecondPic = "";
+                                teamNameWidthLeft = "79px";
+                                teamNameWidthRight = "100px";
+                            }
+                            if (today_date == response.data[i].start_date || yesterday_date ==
+                                response.data[i].start_date) {
+                                $(`#nodata-${response.data[i].sports_type.toLowerCase()}today`).hide();
+                                if (response.data[i].status == 'inPlay') {
+                                    $(`#${response.data[i].sports_type}-today-date`).append(`<tr>
+                                            <th class="text-center" style=" vertical-align:middle">${response.data[i].time}</th>
+                                            <td class="text-center mobile-league"><img src="${response.data[i].league_mark}" width="30px" height="30px"></td>
+                                            <td class="text-center web-league">${response.data[i].league_name}</td>
+                                            <td>
+                                                <div class="text-end web-team" style="width: calc(50% - ${teamNameWidthLeft});">
+                                                    ${response.data[i].home_team}
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}"><img class="showSecondPic${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="padding:3px;${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].home_team}
+                                                </div>
+                                                <div class="text-center vs-text">
+                                                    VS
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start web-team" style="width: calc(50% - ${teamNameWidthRight});">
+                                                    ${response.data[i].away_team}
+                                                </div>
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; margin-bottom: 2px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}"><img class="showSecondPic${showSecondPic}" src="${response.data[i].away_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].away_team}
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">
+                                                <div class="text-center web-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #FF0050; width: 104px; height: 28px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="transform: translate(0, 4px);font-size: 14px; color: #FF0050; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Live Stream</div>
+                                                    </a>
+                                                </div>
+                                                <div class="text-center mobile-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #FF0050; width: 38px; height: 20px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="transform: translate(0, 1px);font-size: 12px; color: #FF0050; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Live</div>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>`)
+                                } else {
+                                    $(`#${response.data[i].sports_type}-today-date`).append(`<tr>
+                                            <th class="text-center" style=" vertical-align:middle">${response.data[i].time}</th>
+                                            <td class="text-center mobile-league"><img src="${response.data[i].league_mark}" width="30px" height="30px"></td>
+                                            <td class="text-center web-league">${response.data[i].league_name}</td>
+                                            <td>
+                                                <div class="text-end web-team" style="width: calc(50% - ${teamNameWidthLeft});">
+                                                    ${response.data[i].home_team}
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""} " >
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="padding:3px;${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; margin-bottom: 2px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}"><img class="showSecondPic${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].home_team}
+                                                </div>
+                                                <div class="text-center vs-text">
+                                                    VS
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start web-team" style="width: calc(50% - ${teamNameWidthRight});">
+                                                    ${response.data[i].away_team}
+                                                </div>
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="padding:3px; ${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}"><img class="showSecondPic${showSecondPic}" src="${response.data[i].away_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].away_team}
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">
+                                                <div class="text-center web-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #909090; width: 104px; height: 28px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="transform: translate(0, 4px);font-size: 14px; color: #909090; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Coming Soon</div>
+                                                    </a>
+                                                </div>
+                                                <div class="text-center mobile-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #909090; width: 46px; height: 25px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="font-size: 12px; color: #909090; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Coming Soon</div>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>`)
+                                }
+                            } else {
+                                $(`#nodata-${response.data[i].sports_type.toLowerCase()}tomorrow`).hide();
+                                if (response.data[i].status == 'inPlay') {
+                                    $(`#${response.data[i].sports_type}-tomorrow-date`).append(`<tr>
+                                            <th class="text-center" style=" vertical-align:middle">${response.data[i].time}</th>
+                                            <td class="text-center mobile-league"><img src="${response.data[i].league_mark}" width="30px" height="30px"></td>
+                                            <td class="text-center web-league">${response.data[i].league_name}</td>
+                                            <td>
+                                                <div class="text-end web-team" style="width: calc(50% - ${teamNameWidthLeft});">
+                                                    ${response.data[i].home_team}
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="padding:3px;${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="border:1px margin-bottom: 2px; solid #BCBCBC"><img class="showSecondPic${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].home_team}
+                                                </div>
+                                                <div class="text-center vs-text">
+                                                    VS
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start web-team" style="width: calc(50% - ${teamNameWidthRight});">
+                                                    ${response.data[i].away_team}
+                                                </div>
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}"><img class="showSecondPic${showSecondPic}" src="${response.data[i].away_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].away_team}
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">
+                                                <div class="text-center web-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #FF0050; width: 104px; height: 28px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="transform: translate(0, 4px);font-size: 14px; color: #FF0050; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Live Stream</div>
+                                                    </a>
+                                                </div>
+                                                <div class="text-center mobile-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #FF0050; width: 38px; height: 20px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="transform: translate(0, 1px);font-size: 12px; color: #FF0050; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Live</div>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>`)
+                                } else {
+                                    $(`#${response.data[i].sports_type}-tomorrow-date`).append(`<tr>
+                                            <th class="text-center" style=" vertical-align:middle">${response.data[i].time}</th>
+                                            <td class="text-center mobile-league"><img src="${response.data[i].league_mark}" width="30px" height="30px"></td>
+                                            <td class="text-center web-league">${response.data[i].league_name}</td>
+                                            <td>
+                                                <div class="text-end web-team" style="width: calc(50% - ${teamNameWidthLeft});">
+                                                    ${response.data[i].home_team}
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="padding:3px;${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].home_mark.split(",")[0]}" width="30px" height="30px" style="border:1px margin-bottom: 2px; solid #BCBCBC"><img class="showSecondPic${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].home_team}
+                                                </div>
+                                                <div class="text-center vs-text">
+                                                    VS
+                                                </div>
+                                                <img class="web-team" src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <img class="web-team${showSecondPic}" src="${response.data[i].home_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">
+                                                <div class="text-start web-team" style="width: calc(50% - ${teamNameWidthRight});">
+                                                    ${response.data[i].away_team}
+                                                </div>
+                                                <div class="text-start mobile-team">
+                                                    <img src="${response.data[i].away_mark.split(",")[0]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}"><img class="showSecondPic${showSecondPic}" src="${response.data[i].away_mark.split(",")[1]}" width="30px" height="30px" style="${response.data[i].sports_type!="Tennis"?"border:1px solid #BCBCBC":""}">${response.data[i].away_team}
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">
+                                                <div class="text-center web-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #909090; width: 104px; height: 28px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="transform: translate(0, 4px);font-size: 14px; color: #909090; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Coming Soon</div>
+                                                    </a>
+                                                </div>
+                                                <div class="text-center mobile-stream"
+                                                    style="border-style: solid;border-width: 1px; border-color: #909090; width: 46px; height: 25px; ">
+                                                    <a href="./livestream.html?uid=${response.data[i].uid}" target="_blank" style="text-decoration:none;">
+                                                        <div
+                                                            style="font-size: 12px; color: #909090; font-family: Microsoft Sans Serif; font-weight: bold;">
+                                                            Coming Soon</div>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>`)
+                                }
+                            }
+                            break;
+                        }
+                        default: {
+                            console.log("other");
+                            break;
+                        }
+                    }
+                }
+            });
+        }
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        $(() => {
+            $(`#nodata-footballtoday`).hide();
+            $(`#nodata-footballtomorrow`).hide();
+            $(`#nodata-basketballtoday`).hide();
+            $(`#nodata-basketballtomorrow`).hide();
+            $(`#nodata-baseballtoday`).hide();
+            $(`#nodata-baseballtomorrow`).hide();
+            $(`#nodata-tennistoday`).hide();
+            $(`#nodata-tennistomorrow`).hide();
+            $('.showTomorrowDay').html(tomorrow_date);
+            postLiveStream(getQueryString("sportType"));
+
+            function postLiveStreamSource(response, data, i) {
+                let dataSource = {
+                    uid: response.data[i].uid
+                };
+
+                $.post(apiUrl + "/get_specific_stream", dataSource, function (response1) {
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>

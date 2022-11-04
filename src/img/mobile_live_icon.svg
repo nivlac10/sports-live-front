@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.707" x2="0.707" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff1056"/>
+      <stop offset="1" stop-color="#f86d36"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.268" y1="0.5" x2="0.908" y2="0.934" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fb8541"/>
+      <stop offset="1" stop-color="#fb3848"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="패스_4" data-name="패스 4" d="M10,0A10,10,0,1,1,0,10,10,10,0,0,1,10,0Z" transform="translate(0 0)" fill="url(#linear-gradient)" clip-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g id="mobile_live_icon" transform="translate(1970.536 -1289.464)">
+    <path id="패스_1" data-name="패스 1" d="M10,0A10,10,0,1,1,0,10,10,10,0,0,1,10,0Z" transform="translate(-1970.536 1289.464)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+    <path id="패스_5" data-name="패스 5" d="M8.161,0A8.161,8.161,0,1,1,0,8.161,8.161,8.161,0,0,1,8.161,0Z" transform="translate(-1968.697 1291.303)" fill="#fff" fill-rule="evenodd" style="mix-blend-mode: overlay;isolation: isolate"/>
+    <path id="패스_6" data-name="패스 6" d="M7.532,0A7.532,7.532,0,1,1,0,7.532,7.532,7.532,0,0,1,7.532,0Z" transform="translate(-1968.068 1291.932)" fill="#fff" fill-rule="evenodd"/>
+    <path id="패스_18" data-name="패스 18" d="M3.373.391a.741.741,0,0,1,1.306,0L7.963,6.524a.741.741,0,0,1-.653,1.09H.742a.741.741,0,0,1-.653-1.09Z" transform="translate(-1955.933 1295.438) rotate(90)" fill="url(#linear-gradient-3)"/>
+    <g id="마스크_그룹_1" data-name="마스크 그룹 1" transform="translate(-1970.536 1289.464)" opacity="0.49" clip-path="url(#clip-path)" style="mix-blend-mode: soft-light;isolation: isolate">
+      <path id="패스_3" data-name="패스 3" d="M8.812,0A8.812,8.812,0,1,1,0,8.812,8.812,8.812,0,0,1,8.812,0Z" transform="translate(6.616 -5.811)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
